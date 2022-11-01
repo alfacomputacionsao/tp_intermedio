@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Inicio</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Inicio</a>
+
+            </li>
+
+            
+
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/salir">Salir</a>
+
+            </li>
+
+            <li>
+                <a href="/ingreso">Listado de Alumnos</a>
+
+            </li>
+
+            <li>
+                <a href="/ingreso/tareas/">Crear Nuevo Alumno</a>
+
+            </li>
+
+            {% else %}
+            <li>
+                <a href="/registrarse">Registro</a>
+
+            </li>
+            <li>
+                <a href="/signin">Logueo</a>
+
+            </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+    {% block content%}
+
+    {% endblock %}
+
+</body>
+
+</html>

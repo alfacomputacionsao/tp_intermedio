@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>Listado de Mis Alumnos</h1>
+<ul>
+    {% for tarea in tareas %}
+    <li>
+
+        
+            {% if tarea.nombre%}
+            <strong>{{tarea.nombre}}</strong>
+            <p>DNI: {{tarea.dni}}</p>
+            <p>E-Mail:{{tarea.email}}</p>
+            <p>Fecha de Alta:{{tarea.creado}}</p>
+            <p>Creado Por el Profesor: {{tarea.usuario}}</p>
+            {% endif %}
+   
+
+
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
